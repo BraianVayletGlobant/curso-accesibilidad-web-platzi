@@ -1,6 +1,6 @@
 # Notas del Curso Accesibilidad Web
 
-## Clases:
+# Clases:
 
 - Clase 1: [Introduccion](#intro)
 - Clase 2: [Conociendo la importancia de la accesibilidad web](#conociendo-la-importancia-de-la-accesibilidad-web)
@@ -8,27 +8,30 @@
 - Clase 4: [Profundizando los 12 criterios de conformidad](#profundizando-los-12-criterios-de-conformidad)
 - Clase 5: [Los 4 principios de WCAG](#los-4-principios-de-wcag)
 - Clase 6: [Tecnología Asistivas cuáles son y cómo funcionan](#tecnologia-asistivas-cuales-son-y-como-funcionan)
+- Clase 7: [Instalación del proyecto y primeros pasos](#instalación-del-proyecto-y-primeros-pasos)
+- Clase 8: [Pruebas automáticas con Lighthouse](#pruebas-automáticas-con-lighthouse)
+- Resultados: [Resultados](#resultados)
 
 ---
 
-## Intro
+# Intro
 
-### Asociación internacional de profesionales de accesibilidad:
+## Asociación internacional de profesionales de accesibilidad:
 
 Es una organización sin fines de lucro que, a través de un sistema de membresías reúne a individuos y organizaciones enfocadas en la accesibilidad o que están en el proceso de desarrollar sus habilidades y estrategias de accesibilidad.
 
 Fundada en Estados Unidos en 2014, desde el 2019 cuenta con un capítulo en América Latina cuya misión es lograr que más profesionistas en la región trabajen en temas de accesibilidad e inclusión.
 
-### Fluent Conference:
+## Fluent Conference:
 
 Son conferencias que hacen en california donde se reúnen desarrolladores y desarrolladoras web de todas las áreas posibles. La idea central de estas conferencias, además de compartir conocimiento, es la de crear comunidades (algo que nuestro estimado Óscar Barajas Tavares siempre nos ha impulsado a hacer).
 
-> ### Links:
+> ## Links:
 >
 > - Asociación internacional de profesionales de accesibilidad: [https://www.accessibilityassociation.org/](https://www.accessibilityassociation.org/)
 > - Fluent Conference: [https://conferences.oreilly.com/fluent/fl-ca.html](https://conferences.oreilly.com/fluent/fl-ca.html)
 
-## Conociendo la importancia de la accesibilidad web
+# Conociendo la importancia de la accesibilidad web
 
 **Accesibilidad Web:**
 
@@ -43,7 +46,7 @@ Es la práctica continua de asegurarnos que todo lo que creamos para la web se p
 - Para mejorar la usabilidad de nuestros proyectos.
 - Porque en algunos lugares es la ley.
 
-## Aprendiendo sobre WCAG y sus criteros de conformidad
+# Aprendiendo sobre WCAG y sus criteros de conformidad
 
 **¿Qué es WCAG?**
 
@@ -55,11 +58,11 @@ En inglés son las Web Content Accessibility Guidelines o en español las Pautas
 
 - **_WAI - Web Accessibility Initiative_**: Iniciativa dentro de W3C cuya meta es asegurar la accesibilidad web.
 
-> ### Links:
+> ## Links:
 >
 > - [Pautas de accesibilidad para el contenido web (WCAG) 2.0](http://www.sidar.org/traducciones/wcag20/es/)
 
-## Profundizando los 12 criterios de conformidad
+# Profundizando los 12 criterios de conformidad
 
 Las pautas de accesibilidad de contenido web nos guían al momento de implementar la accesibilidad web. Las podemos usar durante todo el proceso de desarrollo de producto, desde que nace la idea para lo que queremos construir, durante el diseño de los estilos y las interfaces, hasta cuando escribimos código y hacemos pruebas de calidad. Nos señalan los puntos importantes para tener en cuenta con eso podemos construir páginas, productos y aplicaciones que le funcionan a todos nuestros usuarios sin importar su capacidades, dispositivos o preferencias.
 
@@ -71,7 +74,7 @@ Aunque las pautas (referidas también por su nombre en inglés WCAG) son muy com
 
 En esta lectura vamos a profundizar sobre los criterios de conformidad para tener una idea más clara de que podemos encontrar dentro de WCAG. Podemos empezar por el primer principio:
 
-### **1. Perceptible**:
+## **1. Perceptible**:
 
 Los criterios de conformidad bajo este principio se enfocan en asegurar que todo el contenido que es importante se pueda interpretar de varias maneras. Aqui nos queremos
 
@@ -80,7 +83,7 @@ Los criterios de conformidad bajo este principio se enfocan en asegurar que todo
 - Crear contenido que se pueda presentar de diferentes formas sin perder información o estructura.
 - Facilitar a los usuarios ver y oír el contenido, incluyendo la separación entre el primer plano y el fondo
 
-### **2. Operable**:
+## **2. Operable**:
 
 Cuando hablamos de ser operable, queremos asegurarnos que nuestro sitio es fácil de usar y navegar, que se puede navegar de diferentes maneras y con mouse y/o teclado
 
@@ -89,7 +92,7 @@ Cuando hablamos de ser operable, queremos asegurarnos que nuestro sitio es fáci
 - Tener mucho cuidado de no usar elementos que brillan o se mueven muy rápido ya que pueden provocar ataques, espasmos o convulsiones
 - Asegurarnos que nuestros usuarios pueden navegar, encontrar contenido y determinar dónde se encuentran en nuestros sitios
 
-### **3. Comprensible**:
+## **3. Comprensible**:
 
 Hacer que nuestro sitio web sea comprensible nos asegura que un rango de personas lo pueden usar desde la persona que vive con una discapacidad mental que necesita patrones comunes para saber cómo usar la web hasta la persona que va de carrera y necesita consultar algo rápido
 
@@ -97,7 +100,7 @@ Hacer que nuestro sitio web sea comprensible nos asegura que un rango de persona
 - Hacer que las páginas web aparezcan y operen de manera predecible.
 - Dar instrucciones para evitar errores y oportunidades para corregirlos cuando ocurren
 
-### **4. Robusto**:
+## **4. Robusto**:
 
 Cuando hacemos productos que funcionan en muchos lados, abrimos las posibilidades que cualquier persona los use sin importar su ubicación, máquina, navegador y mucho más
 
@@ -105,11 +108,11 @@ Cuando hacemos productos que funcionan en muchos lados, abrimos las posibilidade
 
 Así son los criterios de conformidad para la version 2.0 de WCAG. Te invito a entrar a la documentación y leer sobre que es necesario a cada nivel. ¿Hay alguno que te sorprende? ¡Cuéntame en los comentarios!
 
-> ### Links:
+> ## Links:
 >
 > - [http://www.sidar.org/traducciones/wcag20/es/](http://www.sidar.org/traducciones/wcag20/es/)
 
-## Los 4 principios de WCAG
+# Los 4 principios de WCAG
 
 WCAG no es perfecto. Debemos asegurarnos que conocemos los principios de WCAG.
 
@@ -138,11 +141,11 @@ _Ejemplo → Hay personas que no tienen uso de un mouse o un teclado por cualqui
 - Accesibilidad en diferentes navegadores
 - Accesibilidad en diferentes dispositivos
 
-> ### Links:
+> ## Links:
 >
 > - [Guía de accesibilidad web y color (II). Recomendaciones de las WCAG 2.1 para color y contraste](https://www.nachomadrid.com/2020/05/wcag-color-contraste/#Criterio_143_Contraste_minimo_Nivel_AA)
 
-## Tecnología Asistivas cuáles son y cómo funcionan
+# Tecnología Asistivas cuáles son y cómo funcionan
 
 Las tecnologías asistivas ayudan a las personas con alguna de sus capacidades mermadas, sean visuales, auditivas o motoras, a consumir la web de la misma forma que lo hacen los demás.
 
@@ -159,3 +162,25 @@ Un ejemplo muy simple y común de este tipo de tecnologías son los lentes 👓.
 
   - Varilla bucal.
   - Switch.
+
+# Instalación del proyecto y primeros pasos
+
+Clonamos el repo del curso.
+
+# Pruebas automáticas con Lighthouse
+
+Hacemos pruebas en ./index.html usando la herramienta **lighthouse**
+
+# Resultados
+
+Usa esta **URL** para probar la accesibilidad con Lighthouse al **principio** del curso:
+
+> [https://gmzjuliana.github.io/curso-acessibilidad-web/index.html](https://gmzjuliana.github.io/curso-acessibilidad-web/index.html)
+
+![inicio]()
+
+Usa esta **URL** para probar la accesibilidad al **final**:
+
+> [https://gmzjuliana.github.io/curso-acessibilidad-web/final.html](https://gmzjuliana.github.io/curso-acessibilidad-web/final.html)
+
+![final]()
