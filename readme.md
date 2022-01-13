@@ -10,6 +10,16 @@
 - Clase 6: [Tecnología Asistivas cuáles son y cómo funcionan](#tecnologia-asistivas-cuales-son-y-como-funcionan)
 - Clase 7: [Instalación del proyecto y primeros pasos](#instalación-del-proyecto-y-primeros-pasos)
 - Clase 8: [Pruebas automáticas con Lighthouse](#pruebas-automáticas-con-lighthouse)
+- Clase 9: [Pruebas con simuladores de discapacidades visuales](#pruebas-con-simuladores-de-discapacidades-visuales)
+- Clase 10: [Pruebas manuales con tu teclado](#pruebas-manuales-con-tu-teclado)
+- Clase 11: [Pruebas manuales con lectores de pantalla](#pruebas-manuales-con-lectores-de-pantalla)
+- Clase 12: [Pruebas manuales con VoiceOver](#pruebas-manuales-con-voiceover)
+- Clase 13: [Usando HTML semántico en el header de nuestro sitio](#usando-html-semántico-en-el-header-de-nuestro-sitio)
+- Clase 14: [¿Qué es el HTML semántico y por qué es importante?](#¿qué-es-el-html-semántico-y-por-qué-es-importante?)
+- Clase 15: [Usando HTML semántico en el contenido principal de nuestro sitio](#usando-html-semántico-en-el-contenido-principal-de-nuestro-sitio)
+- Clase 16: [Usando HTML semántico en footer de nuestro sitio](#usando-html-semántico-en-footer-de-nuestro-sitio)
+- Clase 17: [ARIA: Accessible Rich Internet Applications](#aria:-accessible-rich-internet-applications)
+
 - Resultados: [Resultados](#resultados)
 
 ---
@@ -171,16 +181,182 @@ Clonamos el repo del curso.
 
 Hacemos pruebas en ./index.html usando la herramienta **lighthouse**
 
+# Pruebas con simuladores de discapacidades visuales
+
+Vamos a enforcarnos en 4 discapacidades visuales:
+
+- **Vision borrosa**.
+- **Protanopia:** es la carencia de sensibilidad al color rojo, una disfunción visual relacionada con la percepción del color. Se denomina también dicromacia roja.
+- **Deuteranotopia:** Es la ausencia de los fotorreceptores retinianos del color verde.
+- **Acromatopsia:** es una enfermedad congénita y no progresiva que consiste en una anomalía de la visión a consecuencia de la cual sólo son percibidos los colores blanco, negro, gris y todas sus tonalidades.
+
+Para llevar a cabo una simulacion, utilizamos una extension de Chrome llamada **NoCofee**.
+
+> _Nota: Las DevTools de Chrome tienen un apartado **rendering** para ayudarnos a testear esto._
+
+En esta extension usaremos alguno atributos:
+
+**Blur** → para disfuminar la pagina.
+**Color deficiency** → encontramos las demas deficiencias.
+
+> ## Links:
+>
+> - [42 Browser Extensions to Perform Accessibility Testing Effectively](https://www.digitala11y.com/accessibility-plug-ins-ie-chrome-firefox-browsers/)
+
+# Pruebas manuales con tu teclado
+
+El teclado es muy importante en la accesibilidad web porque las tecnologías asistivas tienden a conectarse con el teclado para darle a sus usuarios diferentes maneras de navegar cuando no tienen acceso a un mouse o un teclado como nosotros.
+
+Los elementos que reciben foco de teclado son elementos interacctivos:
+
+- **Enlaces:** nos llevan a otra página, son para la navegación.
+- **Botones:** nos ayudan a interactuar con la página de alguna manera.
+- **Formularios:** requieren nuestra interacción para llenar nuestros datos.
+
+Los **div no reciben foco porque son un elemento presentacional**, no esperan ninguna interacción a menos de que tú lo programes.
+
+> Tips:
+>
+> - Para cambiar entre pestañas de Izquierda a Derecha es: **Ctrl + tab**
+> - Para ir de Derecha a Izquierda es: **Ctrl + shift + tab**
+
+# Pruebas manuales con lectores de pantalla
+
+Los lectores de pantalla han abierto a la web a diversas personas que antes no podían usar los sitios web. Son Software que mapea las páginas que usamos y las lee en voz alta. Usadas normalmente por personas que tienen incapacidades visuales.
+
+### Combinaciones de lectores de pantalla y navegadores
+
+Es importante tener en cuenta cuales lectores podemos usar de manera compatible con los diferentes navegadores web
+
+- NVDA → Mozilla Firefox
+- JAWS → Microsoft Internet Explorer (EDGE)
+- VoiceOver → Sfari
+- ChromeVox → Google Chrome
+
+Apartado de Chorme DevTools → En Elements → Accessibility → Accessibility Tree
+
+> ## Links:
+>
+> - [ANDI - Accessibility Testing Tool](https://www.ssa.gov/accessibility/andi/help/install.html)
+
+# Pruebas manuales con VoiceOver
+
+Se hacen pruebas con VoiceOver, en mac.
+
+### Comando para ChromeVox para Google Chrome:
+
+- ChromeVox modifier key = Search
+- Turn on braille captions = Search + A, B
+- Show ChromeVox Menus = Search + Period
+- Next heading = Search + H
+- Previous heading = Search + Shift + H
+- Enter Learn Mode = Search + O, K
+- Next group = Search + Ctrl + Down
+- Next object = Search + Right
+- Next line = Search + Down
+- Next word = Search + Shift + Ctrl + Right
+- Next character = Search + Shift + Right
+
+# Usando HTML semántico en el header de nuestro sitio
+
+Un resumen de las etiquetas usadas en esta clase:
+
+```html
+<!-- Parte superior de nuestra pagina Lo primero que ve el usuario en cuanto a orden. -->
+<header></header>
+<!-- Etiqueta para poner imágenes, tiene el atributo alt="El lector de pantalla lee lo que esta aqui" -->
+<img />
+<!-- Para colocar un menú de navegación -->
+<nav></nav>
+<!-- Para poner una lista que no tiene un orden especifico. -->
+<ul></ul>
+<!-- Elemento de lista -->
+<li></li>
+```
+
+# ¿Qué es el HTML semántico y por qué es importante?
+
+El HTML semántico es un concepto para estructurar y escribir código HTML, de manera que el significado del contenido de una página web sea más claro a través de sus etiquetas.
+
+## Cómo funciona el HTML semántico
+
+Las etiquetas semánticas pueden utilizarse en lugar de las etiquetas de presentación estándar y esto ayuda a mejorar la legibilidad y la usabilidad, al tiempo que reduce la necesidad de datos estructurados. Esta nueva forma de concebir la programación permite crear sitios web más accesibles y más significativos para los motores de búsqueda. El marcado semántico también es beneficioso porque permite hacer hojas de estilo CSS separadas para cada sección de su sitio web.
+
+## Ejemplos de HTML semántico
+
+En el siguiente ejemplo, vamos a ver cómo se muestra un código HTML no semántico Vs. uno semántico. A los ojos del usuario, la información presentada en el navegador va a ser la misma, pero para legibilidad del código y SEO, la diferencia es muy marcada:
+
+### Código sin HTML semántico
+
+```html
+<div></div>
+<div><div></div></div>
+<div></div>
+```
+
+### Código con HTML semántico
+
+```html
+<header></header>
+<article><img /></article>
+<footer></footer>
+```
+
+## ¿Cuál es la diferencia entre el HTML semántico dinámico y estático?
+
+Una de las partes más importantes del desarrollo web son los atributos semánticos del HTML. La semántica estática es el significado de una palabra o frase que se mantiene constante independientemente del contexto, mientras que la semántica dinámica cambia en función de su uso.
+
+### Semántica estática
+
+La semántica estática se utiliza para definir diferentes tipos de etiquetas en HTML. No dependen de ningún otro dato contextual, sino que permanecen constantes independientemente de su uso. Por ejemplo:
+
+Al definir una etiqueta de párrafo, el navegador sabe que es un párrafo, independientemente de si se utiliza para poesía o prosa.
+
+### Semántica dinámica
+
+Se utiliza para definir dinámicamente el contenido de un elemento. El significado cambia en función del texto que hay dentro y de las palabras que lo rodean. Por ejemplo, si tiene un elemento que define la ubicación de una empresa como Bogotá, el HTML mostrará “Bogotá” cuando el cursor pase por encima de ese elemento concreto en una página web o cuando se vea ese elemento en Google Maps.
+
+> ## Links:
+>
+> - [Mapa para definir el texto alternativo correcto para una imagen](https://www.usableyaccesible.com/textosalternativosaccesibles/mapa_decision_texto_alternativo.php)
+> - [HTML5 | SEMÁNTICA](https://www.arkaitzgarro.com/html5/capitulo-2.html)
+> - [Computer says NO to HTML5 document outline](http://html5doctor.com/)
+
+# Usando HTML semántico en el contenido principal de nuestro sitio
+
+Hacemos actualizaciones al codigo...
+
+# Usando HTML semántico en footer de nuestro sitio
+
+Hacemos actualizaciones al codigo...
+
+# ARIA: Accessible Rich Internet Applications
+
+**ARIA ( Accessible Rich Internet Applications ):** define cómo realizar contenido Web y aplicaciones Web (especialmente las desarrolladas con Ajax y JavaScript) más accesibles a personas con discapacidades. Por ejemplo, ARIA posibilita puntos de navegación accesibles, widgets JavaScript, sugerencias en formularios y mensajes de error, actualizaciones en directo, y más.
+
+**Atributos de ARIA:**
+
+- Roles
+- Propiedades
+- Estados
+
+> ## Links:
+>
+> - [Introducción a ARIA - Google Developers](https://developers.google.com/web/fundamentals/accessibility/semantics-aria?hl=es-419)
+> - [Primeros pasos con ARIA - Mozilla Developers](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA)
+
+---
+
 # Resultados
 
 Usa esta **URL** para probar la accesibilidad con Lighthouse al **principio** del curso:
 
 > [https://gmzjuliana.github.io/curso-acessibilidad-web/index.html](https://gmzjuliana.github.io/curso-acessibilidad-web/index.html)
 
-![inicio]()
+![inicio](https://raw.githubusercontent.com/BraianVayletGlobant/curso-accesibilidad-web-platzi/main/images/accessibility-index.jpg)
 
 Usa esta **URL** para probar la accesibilidad al **final**:
 
 > [https://gmzjuliana.github.io/curso-acessibilidad-web/final.html](https://gmzjuliana.github.io/curso-acessibilidad-web/final.html)
 
-![final]()
+![final](https://raw.githubusercontent.com/BraianVayletGlobant/curso-accesibilidad-web-platzi/main/images/accessibility-final.jpg)
