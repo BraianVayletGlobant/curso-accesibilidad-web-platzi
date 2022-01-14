@@ -19,8 +19,24 @@
 - Clase 15: [Usando HTML semántico en el contenido principal de nuestro sitio](#usando-html-semántico-en-el-contenido-principal-de-nuestro-sitio)
 - Clase 16: [Usando HTML semántico en footer de nuestro sitio](#usando-html-semántico-en-footer-de-nuestro-sitio)
 - Clase 17: [ARIA: Accessible Rich Internet Applications](#aria:-accessible-rich-internet-applications)
-
-- Resultados: [Resultados](#resultados)
+- Clase 18: [ARIA roles](#ARIA-roles)
+- Clase 19: [ARIA properties](#ARIA-properties)
+- Clase 20: [ARIA states](#ARIA-states)
+- Clase 21: [Overview del proyecto con los retos resueltos](#Overview-del-proyecto-con-los-retos-resueltos)
+- Clase 22: [Contrastes de color](#Contrastes-de-color)
+- Clase 23: [Iconos](#Iconos)
+- Clase 24: [Skip Links](#Skip-Links)
+- Clase 25: [Estilos de foco y hover](#Estilos-de-foco-y-hover)
+- Clase 26: [Overview retos resueltos con CSS](#Overview-retos-resueltos-con-CSS)
+- Clase 27: [Manejando el foco del teclado y botones](#Manejando-el-foco-del-teclado-y-botones)
+- Clase 28: [Manejando el foco del teclado y el carousel](#Manejando-el-foco-del-teclado-y-el-carousel)
+- Clase 29: [Coordinando el foco del teclado con el foco de lectores de pantallas](#Coordinando-el-foco-del-teclado-con-el-foco-de-lectores-de-pantallas)
+- Clase 30: [Manejando modales](#Manejando-modales)
+- Clase 31: [Mejorando la accesibilidad con teclado de nuestro modal](#Mejorando-la-accesibilidad-con-teclado-de-nuestro-modal)
+- Clase 32: [Ayudando a nuestros usuarios a interactuar correctamente con el sitio](#Ayudando-a-nuestros-usuarios-a-interactuar-correctamente-con-el-sitio)
+- Clase 33: [Validando formularios](#Validando-formularios)
+- Clase 34: [Manejando cambios dinámicos](#Manejando-cambios-dinámicos)
+- Clase 35: [Resultados](#resultados)
 
 ---
 
@@ -345,18 +361,248 @@ Hacemos actualizaciones al codigo...
 > - [Introducción a ARIA - Google Developers](https://developers.google.com/web/fundamentals/accessibility/semantics-aria?hl=es-419)
 > - [Primeros pasos con ARIA - Mozilla Developers](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA)
 
----
+# ARIA roles
+
+- Definen el tipo general del objeto (como un artículo, una alerta o deslizador)
+- Los roles comunican al navegador cuales son las interacciones que debería esperar y como se va usar este objeto dentro de la página o aplicación
+- Se usan en ocasiones especiales es mejor usar HTML semántico para no meterse en agregar roles a todos los elementos
+- Es una especificación difícil de usar y se debe saber muy bien cómo usar
+- Especifican de cómo se navega en esa sección
+- Los navegadores, en especial los lectores de pantalla navegan diferentes roles en diferentes estilos
+- **Ejemplo** ⇒
+  - _Articulo ⇒ Poca Interacción_
+  - _Formulario ⇒ Mucha Interacción_
+
+**RESUMEN:** Los ARIA roles preparan al navegador o lectores de pantalla a indicar cuales son las interacciones que debería esperar, se usan en ocasiones especiales, en la mayoría de los casos se recomienda usar HTML semántico
+
+![PeriodicTableARIA1.0Roles](https://64.media.tumblr.com/68423fdd6093a6f281b91b28eff9097f/tumblr_inline_noery1zJyq1rbrg1w_1280.png)
+
+# ARIA properties
+
+Se suele usar mas seguido que los roles.
+
+### Qué son
+
+Comunican atributos que son esenciales para el comportamiento o significado de un elemento pero que se suelen comunicar visualmente
+
+- Agregar significado a nuestro contenido visual
+
+### ARIA label
+
+- Podemos usar para agregar un string para describir un elemento de nuestro código
+- ARIA _Ejemplo_:
+
+```html
+<form class="form-container">
+  Nombre<input type="text" aria-label="nombre" /> <br />
+  Correo<input type="text" aria-label="correo" /> <br />
+  <div class="message-input">Mensaje<input type="text" /> <br /></div>
+  <button class="send-button">Enviar</button>
+</form>
+```
+
+# ARIA states
+
+### Ideas/conceptos claves
+
+Estados de ARIA comunican estados y cambios de estados en elementos que se suelen comunicar visualmente
+
+### Apuntes
+
+- Existen veces que mostramos casos que solo pasan cuando algo cambia en la pantalla
+  - Impidiendo que personas con discapacidades visuales no podrán notar ese cambio
+  - Debemos dar una experiencia del sitio a personas discapacitadas al igual que damos importancia a personas sin ningún problema
+- Si tenemos un checkbox
+  - Sabemos que esta seleccionado por que está marcado
+  - Alguien con discapacidad quizás no pueda ver eso
+- Un lector de pantalla no se dará cuenta que algunas cosas no se están mostrando
+- Podemos usar el atributo aria-hidden para ocultar algunas cosas de los lectores de pantalla
+
+```html
+<li aria-hidden="true">...</li>
+```
+
+**RESUMEN:** Podemos brindar una experiencia similar a usuarios con discapacidades al igual que usuarios que tienen todos los beneficios físicos, usando estados los cuales comunicarán que cosas se estarán mostrando en pantalla
+
+# Overview del proyecto con los retos resueltos
+
+Refactorizamos el codigo...
+
+# Contrastes de color
+
+### Ideas/conceptos claves
+
+El contraste de color es la diferencia existente entre dos o más colores que interactúan en un diseño de forma que afectan al modo en el cual se percibe. El color según sus diferentes características influye en el efecto que causa en las personas
+
+### Apuntes
+
+- Los contrastes de color se refieren a la diferencia del color de fondo y color del texto
+- Normalmente es tarea del diseñador encargarse de este aspecto, pero como desarrolladores podemos encargarnos de detectar problemas de contraste para posteriormente comunicar el problema
+- Si el contraste es muy bajo no se puede ver el texto correctamente
+- Podemos usar Chrome Dev Tools para revisar el contraste de los colores de los textos
+  - Nos indicaran a que nivel de WCAG estaremos llegando
+
+**RESUMEN:** El contraste de color es importante para llegar a más personas, se trata de la diferencia del color de fondo y del color del texto. Podemos usar las Chrome Dev Tools para verificar este aspecto
+
+# Iconos
+
+### Apuntes
+
+- Pensamos que los iconos son universales, pero pueden ser confusos si nunca los has visto o dependiendo de la aplicación que estas usando
+- Para comunicar de una manera más eficiente se podría agregar un texto especificando el icono
+
+**RESUMEN**: Los iconos pueden a llegar a ser confusos en algunos casos con personas con discapacidades para solucionar esta problemática es importante especificar un texto
+
+# Skip Links
+
+### Apuntes
+
+- A veces tenemos una navegación inicial bastante extensa
+- Para una persona con discapacidades que use un dispositivo que le facilite acceder al sitio, tendrá que pasar por todo el contenido inicial
+- Podemos usar skip links facilitar la navegación ofreciendo un botón que le permita saltar al contenido principal
+- Skip links son enlaces que nos dirigen a partes específicas dentro del HTML
+- Son botones que a simple vista no se ven pero al momento que un software de lectura de texto los detecta aparecene, se crean poniendo un botón común y corriente:
+
+```html
+<button id="skip-link">Saltar al contenido</button>
+```
+
+Y en css le pondremos lo siguiente
+
+```css
+.skip-link{
+  weight: 0; /* desaparecemos el botón a simple vista*/
+}
+.skip-link:focus,
+.skip-link:active{
+  background..
+  font ...
+} /* de esta forma cuando navegen con un teclado este aparecerá*/
+```
+
+### Recomendación:
+
+Utilizar la etiqueta main
+
+```html
+<main id="tu_id">
+  <!-- Tu contenido -->
+</main>
+```
+
+Es lo más recomendable, gracias a ello tenemos por defecto este comportamiento habilitado.
+Antes de ello, aprendan bien a posicionar la etiqueta main, semánticamente tiene un orden que hay que cumplir.
+
+Si te preocupa la compatibilidad de Main: Incluso es aceptado por Internet Explorer 11 con la propiedad: width: tuvalor, pero para 2020 la el uso de este browser es del 2%, así que: Ni se preocupen ya por darle soporte, está “prácticamente muerto IE 11”
+
+# Estilos de foco y hover
+
+Refactorizamos el codigo...
+
+# Overview retos resueltos con CSS
+
+Refactorizamos el codigo...
+
+# Manejando el foco del teclado y botones
+
+Refactorizamos el codigo...
+
+# Manejando el foco del teclado y el carousel
+
+**Tabindex**: Indica si su elemento puede ser enfocado, y si participa en la navegación secuencial del teclado.
+
+Valores de Tabindex:
+
+- Valor negativo(-1): El elemento debe ser enfocado, pero no debe de ser accesible a través de la navegación.
+- Valor positivo (>0): Debe poder ser enfocado y su orden relativo es definido por el valor del atributo.
+- Valor de 0: Debe ser enfocado y ser accesible a través de la navegación secuencial del teclado, pero su orden relativo es definido por convención de la plataforma.
+
+> ## Links:
+>
+> - [TabIndex - Google Developers](https://developers.google.com/web/fundamentals/accessibility/focus/using-tabindex?hl=es)
+
+# Coordinando el foco del teclado con el foco de lectores de pantallas
+
+### Ideas/conceptos claves
+
+Tab index ⇒ indica si su elemento puede ser enfocado y si participa en la navegación secuencial del teclado
+
+### Recursos
+
+Uso de tabindex | Web | Google Developers
+
+### Apuntes
+
+#### Botones
+
+- Hoy en día se necesita usar JS para las interacciones de usuario
+- Puedes usar JS para manejar estas interacciones
+- La etiqueta Button se debe usar siempre y cuando habrá una interacción
+
+#### Carousel
+
+- Valores de tab index
+  - Valor negativo (-1) ⇒ El elemento debe ser enfocado, pero no debe de ser accesible a través de la navegación
+  - Valor positivo (>0) ⇒ debe poder ser enfocado y su orden relativo es definido por el valor del atributo
+  - Valor de 0 ⇒ El elemento debe ser enfocado y ser accesible a través de la navegación secuencial del teclado, pero su orden relativo es definido por convención de la plataforma
+- Valores de aria hidden para los elementos que están ocultos
+
+**RESUMEN:** Se puede dar a los websites con interacciones más accesibilidad manipulando los atributos conocidos anteriormente para mejorar la accesibilidad mediante el JS
+
+# Manejando modales
+
+Un modal siempre debería tener tres salidas:
+
+- **Botón** de cerrar
+- **Click** fuera del modal
+- Tecla **ESC** del teclado.
+
+Refactorizamos el codigo...
+
+# Mejorando la accesibilidad con teclado de nuestro modal
+
+Refactorizando el codigo...
+
+> ## Links:
+>
+> - [keycode](https://keycode.info/)
+
+# Ayudando a nuestros usuarios a interactuar correctamente con el sitio
+
+**_”El poder de la Web está en su universalidad. El acceso de todas las personas independientemente de la discapacidad es un aspecto esencial.”_**
+
+### Apuntes
+
+- La 3° Ley de WCAG ⇒ “Ser comprensible”
+- Debemos esforzarnos, para que todas las acciones sean fáciles de entender
+- Nuestras acciones deben ser predecibles es decir que estemos usando patrones que se usan en otras aplicaciones, otros contextos para unas mismas acciones
+
+# Validando formularios
+
+Refactorizamos el codigo...
+
+# Manejando cambios dinámicos
+
+Cuando surgen cambios de forma dinámica, por ejemplo: un mensaje de error por un input faltante en un formulario, o un mensaje de confirmación. Debemos ser capaces de transmitir esa información a usuarios que utilicen lectores de pantallas.
+
+El atributo **aria-live** añade a un elemento para indicar que es una “región viva”, es decir, que su contenido se modifica y actualiza dinámicamente. En nuestro caso es la zona de “Últimas noticias”, que se actualiza cada 10 segundo automáticamente, sin intervención del usuario.
+
+- **Off**: Es el estado predeterminado.
+- **Polite**: Espera a que el lector de pantalla termine de leer el elemento actual. Se utiliza cuando el mensaje que se quiere comunicar, no es importante
+- **Assertive**: Interrumpe la lectura para dar el mensaje. Se utiliza cuando se quiere dar prioridad al mensaje, por ejemplo, en el mensaje de confirmación del envío de un formulario
+
+**Aria-live** no es el único atributo que se puede utilizar en estos casos.
+
+> ## Links:
+>
+> - [Más información](https://www.usableyaccesible.com/ejemplo_aria_live/ejemplo_liveregions.html)
 
 # Resultados
 
-Usa esta **URL** para probar la accesibilidad con Lighthouse al **principio** del curso:
-
-> [https://gmzjuliana.github.io/curso-acessibilidad-web/index.html](https://gmzjuliana.github.io/curso-acessibilidad-web/index.html)
+Sin considerar la Accesibilidad.
 
 ![inicio](https://raw.githubusercontent.com/BraianVayletGlobant/curso-accesibilidad-web-platzi/main/images/accessibility-index.jpg)
 
-Usa esta **URL** para probar la accesibilidad al **final**:
-
-> [https://gmzjuliana.github.io/curso-acessibilidad-web/final.html](https://gmzjuliana.github.io/curso-acessibilidad-web/final.html)
+Haciendo foco en la mejora de la Accesibilidad.
 
 ![final](https://raw.githubusercontent.com/BraianVayletGlobant/curso-accesibilidad-web-platzi/main/images/accessibility-final.jpg)
