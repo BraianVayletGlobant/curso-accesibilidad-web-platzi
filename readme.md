@@ -18,7 +18,7 @@
 - Clase 14: [¿Qué es el HTML semántico y por qué es importante?](#¿qué-es-el-html-semántico-y-por-qué-es-importante?)
 - Clase 15: [Usando HTML semántico en el contenido principal de nuestro sitio](#usando-html-semántico-en-el-contenido-principal-de-nuestro-sitio)
 - Clase 16: [Usando HTML semántico en footer de nuestro sitio](#usando-html-semántico-en-footer-de-nuestro-sitio)
-- Clase 17: [ARIA: Accessible Rich Internet Applications](#aria:-accessible-rich-internet-applications)
+- Clase 17: [ARIA Accessible Rich Internet Applications](#aria-accessible-rich-internet-applications)
 - Clase 18: [ARIA roles](#ARIA-roles)
 - Clase 19: [ARIA properties](#ARIA-properties)
 - Clase 20: [ARIA states](#ARIA-states)
@@ -346,7 +346,7 @@ Hacemos actualizaciones al codigo...
 
 Hacemos actualizaciones al codigo...
 
-# ARIA: Accessible Rich Internet Applications
+# ARIA Accessible Rich Internet Applications
 
 **ARIA ( Accessible Rich Internet Applications ):** define cómo realizar contenido Web y aplicaciones Web (especialmente las desarrolladas con Ajax y JavaScript) más accesibles a personas con discapacidades. Por ejemplo, ARIA posibilita puntos de navegación accesibles, widgets JavaScript, sugerencias en formularios y mensajes de error, actualizaciones en directo, y más.
 
