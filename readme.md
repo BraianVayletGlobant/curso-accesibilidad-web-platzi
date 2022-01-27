@@ -1,6 +1,8 @@
 # Notas del Curso Accesibilidad Web
 
-# Clases:
+## Mis Cursos en Platzi 👉 [Certificados](https://drive.google.com/drive/folders/1SNu_BcXoBeMUwQuw-CO2qc6QWhHWv_cL)
+
+## Clases:
 
 - Clase 1: [Introduccion](#intro)
 - Clase 2: [Conociendo la importancia de la accesibilidad web](#conociendo-la-importancia-de-la-accesibilidad-web)
